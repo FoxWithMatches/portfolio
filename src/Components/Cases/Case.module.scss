@@ -1,0 +1,59 @@
+.case {
+  display: flex;
+  flex-direction: column;
+
+  &_image {
+    width: 15rem;
+    margin: 5rem auto 3rem auto;
+  }
+
+  &_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    & > ol {
+      width: 50%;
+      padding: 3rem 6rem 0 6rem;
+      font-weight: 600;
+      font-size: 1.2rem;
+
+      & > li {
+        padding: 0.5rem 0;
+        font-weight: 400;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  &_nav {
+    display: flex;
+    align-items: center;
+
+    & > ul {
+      width: 50%;
+      padding: 1rem 6rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+
+      & > li {
+        padding: 1rem 0;
+      }
+    }
+
+    & > img {
+      width: 50%;
+      padding: 6rem;
+    }
+
+    &_link {
+        color: #3a5860;
+
+        &:hover {
+            background-color: #F6F3B7;
+            text-decoration: none;
+            transition: 1s color;
+        }
+
+    }
+  }
+}

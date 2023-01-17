@@ -77,7 +77,6 @@ legend {
   outline: 0;
 }
 
-ol,
 ul {
   list-style: none;
 }
@@ -112,7 +111,7 @@ html {
 
 body {
   background: white;
-  line-height: 1;
+  line-height: 1.2;
   color: #3F3D3D;
   font-size: 1rem;
   width: 100%;
