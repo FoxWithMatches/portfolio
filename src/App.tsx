@@ -1,10 +1,12 @@
+import { PageWrapper } from './Components/Common/PageWrapper';
 import React from 'react';
-import { Header } from './Components/Common/Header';
 
 function App() {
   return (
     <div>
-      <Header />
+      <PageWrapper>
+        <div>Hello</div>
+      </PageWrapper>
     </div>
   );
 }
