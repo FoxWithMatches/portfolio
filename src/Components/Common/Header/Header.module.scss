@@ -1,0 +1,28 @@
+.header {
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+
+    &_logo {
+        color: #3A5860;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        & > span {
+            font-weight: 100;
+        }
+    }
+
+    &_nav {
+        display: flex;
+
+        &_link {
+            padding-left: 2rem;
+        }
+    }
+
+    
+}
