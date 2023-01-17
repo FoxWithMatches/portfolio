@@ -1,0 +1,17 @@
+.button {
+  background-color: #3a5860;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-size: inherit;
+  width: 15rem;
+  border: none;
+  border-radius: .7rem;
+  transition: 1s;
+
+
+  &:hover {
+    transform: scale(0.93);
+    transition: 1s;
+    cursor: pointer;
+  }
+}

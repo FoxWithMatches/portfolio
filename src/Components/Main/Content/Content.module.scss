@@ -1,0 +1,21 @@
+.content {
+  height: 100%;
+  background: url(../../../assets/bckg.png) no-repeat right;
+
+  &_container {
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-left: 3rem;
+    gap: 1rem;
+  }
+
+  &_title {
+    width: 25rem;
+    font-size: 2rem;
+    font-weight: 600;
+
+  }
+}
