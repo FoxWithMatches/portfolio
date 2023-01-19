@@ -10,8 +10,8 @@ export const PortfolioList = () => {
   return (
     <main className={style.wrapper}>
       <Card section="Разработка" title="ODA cultura" image={oda} link={routes.case1} />
-      <Card section="Разработка" title="Notes" image={notes} link={routes.case1} />
-      <Card section="Разработка" title="Notes" image={apkb} link={routes.case1} />
+      <Card section="Разработка" title="Notes" image={notes} link={routes.case2} />
+      <Card section="Разработка" title="Notes" image={apkb} link={routes.case3} />
     </main>
   );
 };
