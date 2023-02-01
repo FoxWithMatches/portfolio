@@ -2,6 +2,8 @@ import { Button } from 'Components/Common/Button';
 import { Input } from 'Components/Common/Input';
 import React, { ChangeEvent, useState, useEffect } from 'react';
 import style from './Reg.module.scss';
+import hide from '../../assets/hide.png'
+import show from '../../assets/show.png'
 
 export const Reg = () => {
   const [formState, setFormState] = useState({
@@ -12,6 +14,7 @@ export const Reg = () => {
   });
 
   const [errorMessage, setErrorMesage] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const validateEmail = (email: string) => {
     const emailRegex =
@@ -76,13 +79,24 @@ export const Reg = () => {
           changeHandler={changeHandler('email')}
           placeholder={'konstantin@mail.ru'}
         />
-        <Input
-          name={'Пароль'}
-          value={formState.password}
-          changeHandler={changeHandler('password')}
-          type={'password'}
-          required
-        />
+        <div className={style.wrapper_input_button}>
+          <Input
+            name={'Пароль'}
+            value={formState.password}
+            changeHandler={changeHandler('password')}
+            type={showPassword ? 'text' : 'password'}
+            required
+          />
+          <button
+            className={style.eye}
+            type="button"
+            onClick={() => {
+              setShowPassword(!showPassword);
+            }}
+          >
+            {showPassword ? <img src={hide} alt="hide eye" /> : <img src={show} alt="show eye" />}
+          </button>
+        </div>
 
         {errorMessage !== '' && <div className={style.error}>{errorMessage}</div>}
 

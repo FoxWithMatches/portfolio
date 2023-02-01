@@ -10,11 +10,24 @@ type InputProps = {
   placeholder?: string;
 };
 
-export const Input = ({ changeHandler, value, name, type = 'text', placeholder = '...' }: InputProps) => {
+export const Input = ({
+  changeHandler,
+  value,
+  name,
+  type = 'text',
+  placeholder = '...',
+}: InputProps) => {
   return (
     <label className={style.input_wrapper}>
       <span>{name}</span>
-      <input value={value} className={style.input} onChange={changeHandler} type={type} placeholder={placeholder} />
+      <input
+        value={value}
+        className={style.input}
+        onChange={changeHandler}
+        type={type}
+        placeholder={placeholder}
+      >
+      </input>
     </label>
   );
 };
