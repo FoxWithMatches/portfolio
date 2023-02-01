@@ -13,6 +13,12 @@ export const Reg = () => {
 
   const [errorMessage, setErrorMesage] = useState('');
 
+  const validateEmail = (email: string) => {
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(email);
+  };
+
   const changeHandler =
     (fieldName: 'name' | 'phone' | 'email' | 'password') =>
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +37,12 @@ export const Reg = () => {
       setErrorMesage('');
       console.log(formState, 'push on a server');
     }
+
+    if (!validateEmail(formState.email)) {
+      setErrorMesage('invalid email address');
+      return;
+    }
+    console.log(formState, 'push on a server');
   };
 
   useEffect(() => {
