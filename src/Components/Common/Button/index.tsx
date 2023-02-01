@@ -1,11 +1,12 @@
 import React from 'react';
-import style from './Button.module.scss'
+import style from './Button.module.scss';
 
 type ButtonProps = {
   title: string;
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
+  onClick?: () => void;
 };
 
-export const Button = (props: ButtonProps) => {
-  const { title } = props;
-  return <button className={style.button}>{title}</button>;
+export const Button: React.FC<ButtonProps> = ({ title, onClick }) => {
+  return <button className={style.button} onClick={onClick}>{title}</button>;
 };

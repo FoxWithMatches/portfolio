@@ -3,7 +3,7 @@ import React from 'react';
 import style from './Portfolio.module.scss';
 import oda from '../../assets/portfolio/oda.png';
 import apkb from '../../assets/portfolio/apkb.png';
-import notes from '../../assets/portfolio/notes.svg';
+import notes from '../../assets/portfolio/notes.png';
 import { routes } from 'Helpers/Constants/routes';
 
 export const PortfolioList = () => {

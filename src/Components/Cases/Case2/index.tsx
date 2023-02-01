@@ -1,6 +1,6 @@
 import React from 'react';
 import style from '../Case.module.scss';
-import notes from '../../../assets/portfolio/notes.svg';
+import notes from '../../../assets/portfolio/notes.png';
 
 export const Case2 = () => {
   return (

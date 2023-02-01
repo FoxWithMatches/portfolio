@@ -2,6 +2,7 @@ import { routes } from 'Helpers/Constants/routes';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './Header.module.scss';
+import register from '../../../assets/register.png'
 
 export const Header = () => {
   return (
@@ -27,6 +28,11 @@ export const Header = () => {
         <li>
           <Link to={routes.contacts} className={style.header_nav_link}>
             Контакты
+          </Link>
+        </li>
+        <li>
+          <Link to={routes.reg} className={style.header_nav_link}>
+            <img src={register} alt="logo register" width='24px'/>
           </Link>
         </li>
       </ul>
