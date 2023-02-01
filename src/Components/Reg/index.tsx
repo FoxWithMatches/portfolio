@@ -2,8 +2,8 @@ import { Button } from 'Components/Common/Button';
 import { Input } from 'Components/Common/Input';
 import React, { ChangeEvent, useState, useEffect } from 'react';
 import style from './Reg.module.scss';
-import hide from '../../assets/hide.png'
-import show from '../../assets/show.png'
+import hide from '../../assets/hide.png';
+import show from '../../assets/show.png';
 
 export const Reg = () => {
   const [formState, setFormState] = useState({
@@ -22,6 +22,11 @@ export const Reg = () => {
     return emailRegex.test(email);
   };
 
+  const validatePhone = (phone: string) => {
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
+  };
+
   const changeHandler =
     (fieldName: 'name' | 'phone' | 'email' | 'password') =>
     (event: ChangeEvent<HTMLInputElement>) => {
@@ -36,16 +41,16 @@ export const Reg = () => {
     event.preventDefault();
     if (formState.password.length < 5) {
       setErrorMesage('password is short');
+    } else if (!validateEmail(formState.email)) {
+      setErrorMesage('invalid email address');
+      formState.email = '';
+    } else if (!validatePhone(formState.phone)) {
+      setErrorMesage('invalid phone');
+      formState.phone = '';
     } else {
       setErrorMesage('');
       console.log(formState, 'push on a server');
     }
-
-    if (!validateEmail(formState.email)) {
-      setErrorMesage('invalid email address');
-      return;
-    }
-    console.log(formState, 'push on a server');
   };
 
   useEffect(() => {
@@ -71,7 +76,7 @@ export const Reg = () => {
           value={formState.phone}
           changeHandler={changeHandler('phone')}
           type={'tel'}
-          placeholder={'+7 999 99 99 99'}
+          placeholder={'+7 '}
         />
         <Input
           name={'E-mail'}
