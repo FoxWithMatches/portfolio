@@ -1,44 +1,35 @@
 .card {
-    position: relative;
-    width: 20rem;
-    height: 25rem;
-    padding: 1rem;
+  width: 15rem;
+  height: 12rem;
+  padding: 1rem;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: color, background-color 1s;
+
+  &_section {
+    font-size: 0.8rem;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  &_link {
+    text-decoration: none;
+    color: inherit;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    transition:  color, background-color 1s;
+    gap: 1rem;
+  }
 
-    &_section {
-        font-size: .8rem;
-        font-weight: 200;
-        text-transform: uppercase;
-    }
+  &_image {
+    width: 10rem;
+  }
 
-    &_title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding-top: 1rem;
-    }
-
-    &_link {
-        text-decoration: none;
-        color: inherit;
-        position: absolute;
-        bottom: 2rem;
-    }
-    
-    &_image {
-        position: absolute;
-        top: 30%;
-        
-    }
-
-    &:hover {
-        transform: scale(0.93);
-        background-color: #3a5860;
-        transition: 1s;
-        cursor: pointer;
-        color: #fff;
-    }
+  &:hover {
+    transform: scale(0.93);
+    background-color: #3a5860;
+    transition: 1s;
+    cursor: pointer;
+    color: #fff;
+  }
 }

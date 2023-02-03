@@ -10,15 +10,13 @@ type CardTypeProps = {
 };
 
 export const Card = (props: CardTypeProps) => {
-  const { title, section, image, link } = props;
+  const { section, image, link } = props;
   return (
     <div className={style.card}>
-      <h4 className={style.card_section}>{section}</h4>
-      <h2 className={style.card_title}>{title}</h2>
-      <img src={image} alt="image" className={style.card_image} />
-
       <Link to={link} className={style.card_link}>
-        Подробнее &#8594;
+        <h4 className={style.card_section}>{section}</h4>
+        <img src={image} className={style.card_image} alt="image" />
+        <div>Подробнее &#8594;</div>
       </Link>
     </div>
   );

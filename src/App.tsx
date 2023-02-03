@@ -16,12 +16,14 @@ function App() {
     <Routes>
       <Route path={routes.main} element={<PageWrapper />}>
         <Route index element={<Main />} />
-        <Route path={routes.portfolio} element={<Portfolio />} />
+        <Route path={routes.portfolio} element={<Portfolio />}>
+          <Route path={routes.case1} element={<CaseOne />} />
+          <Route path={routes.case2} element={<CaseTwo />} />
+          <Route path={routes.case3} element={<CaseThree />} />
+        </Route>
         <Route path={routes.contacts} element={<ContactPage />} />
         <Route path={routes.reg} element={<RegPage />} />
-        <Route path={routes.case1} element={<CaseOne />} />
-        <Route path={routes.case2} element={<CaseTwo />} />
-        <Route path={routes.case3} element={<CaseThree />} />
+
         <Route path={routes.person} element={<PersonPage />} />
       </Route>
     </Routes>

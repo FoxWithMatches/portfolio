@@ -5,6 +5,7 @@ import oda from '../../assets/portfolio/oda.png';
 import apkb from '../../assets/portfolio/apkb.png';
 import notes from '../../assets/portfolio/notes.png';
 import { routes } from 'Helpers/Constants/routes';
+import { Outlet } from 'react-router-dom';
 
 export const PortfolioList = () => {
   return (
@@ -12,6 +13,7 @@ export const PortfolioList = () => {
       <Card section="Разработка" title="ODA cultura" image={oda} link={routes.case1} />
       <Card section="Разработка" title="Notes" image={notes} link={routes.case2} />
       <Card section="Разработка" title="Notes" image={apkb} link={routes.case3} />
+      <Outlet />
     </main>
   );
 };
