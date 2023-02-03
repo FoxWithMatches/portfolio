@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { UserSelectors, UserSliceActions } from 'Store';
+import style from './RegPage.module.scss'
 
 export const RegPage = () => {
   const loading = useSelector(UserSelectors.getUserLoading);
@@ -20,5 +21,5 @@ export const RegPage = () => {
       dispatch(UserSliceActions.setUserLoading(false));
     }
   }, [token]);
-  return <>{loading ? <h1>Loading...</h1> : <Reg />}</>;
+  return <>{loading ? <h1 className={style.wrapper}>Loading...</h1> : <Reg />}</>;
 };
