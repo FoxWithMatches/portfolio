@@ -6,5 +6,6 @@ export const routes = {
   notFound: '*',
   case1: '/portfolio/case1',
   case2: '/portfolio/case2',
-  case3: '/portfolio/case3'
+  case3: '/portfolio/case3',
+  person: '/person'
 };

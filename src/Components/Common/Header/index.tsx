@@ -2,9 +2,13 @@ import { routes } from 'Helpers/Constants/routes';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from './Header.module.scss';
-import register from '../../../assets/register.png'
+import register from '../../../assets/register.png';
+import { useSelector } from 'react-redux';
+import { UserSelectors } from 'Store';
 
 export const Header = () => {
+  const userName = useSelector(UserSelectors.getUserName);
+
   return (
     <header className={style.header}>
       <div>
@@ -31,9 +35,15 @@ export const Header = () => {
           </Link>
         </li>
         <li>
-          <Link to={routes.reg} className={style.header_nav_link}>
-            <img src={register} alt="logo register" width='24px'/>
-          </Link>
+          {userName ? (
+              <Link to={routes.person} className={style.header_nav_link}>
+                <span className={style.nameAuth}>{userName}</span>
+              </Link>
+          ) : (
+            <Link to={routes.reg} className={style.header_nav_link}>
+              <img src={register} alt="logo register" width="24px" />
+            </Link>
+          )}
         </li>
       </ul>
     </header>

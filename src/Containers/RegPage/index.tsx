@@ -1,11 +1,24 @@
-import { PageWrapper } from 'Components/Common/PageWrapper';
 import { Reg } from 'Components/Reg';
-import React from 'react';
+import { routes } from 'Helpers/Constants/routes';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { UserSelectors, UserSliceActions } from 'Store';
 
 export const RegPage = () => {
-  return (
-    <PageWrapper>
-      <Reg />
-    </PageWrapper>
-  );
+  const loading = useSelector(UserSelectors.getUserLoading);
+  const token = useSelector(UserSelectors.getUserToken);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (token && token !== 'error') {
+      navigate(routes.person);
+      dispatch(UserSliceActions.setUserLoading(false));
+    }
+    if (token === 'error') {
+      dispatch(UserSliceActions.setUserLoading(false));
+    }
+  }, [token]);
+  return <>{loading ? <h1>Loading...</h1> : <Reg />}</>;
 };

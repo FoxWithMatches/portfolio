@@ -4,6 +4,8 @@ import React, { ChangeEvent, useState, useEffect } from 'react';
 import style from './Reg.module.scss';
 import hide from '../../assets/hide.png';
 import show from '../../assets/show.png';
+import { useDispatch } from 'react-redux';
+import { UserSliceActions } from 'Store';
 
 export const Reg = () => {
   const [formState, setFormState] = useState({
@@ -15,6 +17,8 @@ export const Reg = () => {
 
   const [errorMessage, setErrorMesage] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+
+  const dispatch = useDispatch();
 
   const validateEmail = (email: string) => {
     const emailRegex =
@@ -49,6 +53,22 @@ export const Reg = () => {
       formState.phone = '';
     } else {
       setErrorMesage('');
+      dispatch(UserSliceActions.setUserLoading(true));
+
+      setTimeout(
+        () =>
+          dispatch(
+            UserSliceActions.setUserData({
+              name: formState.name,
+              email: formState.email,
+              phone: formState.phone,
+              password: formState.password,
+              token: '123',
+            }),
+          ),
+        2000,
+      );
+
       console.log(formState, 'push on a server');
     }
   };
