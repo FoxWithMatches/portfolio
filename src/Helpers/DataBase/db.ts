@@ -1,6 +1,9 @@
+import odaImage from '../../assets/portfolio/oda.png';
+
 export const oda = {
   id: 1,
   title: 'ODA culture',
+  type: 'разработка',
   description: '',
   goals: [
     'Разработать дизайн сайта для молодого экологичного бренда многоразовых складных стакаников. Сайт должен быть современным, минималистичным и “легким”.',
